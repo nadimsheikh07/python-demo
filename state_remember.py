@@ -14,6 +14,7 @@ print(counter())  # Output: 3
 
 print("----------------")
 
+
 def create_counter():
     state = 0  # Enclosed variable (persists in memory)
 
@@ -32,6 +33,7 @@ print(my_counter())  # Output: 2
 print(my_counter())  # Output: 3
 
 print("----------------")
+
 
 def generator_counter():
     state = 0

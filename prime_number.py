@@ -5,12 +5,13 @@ def is_prime(n):
         return True
     if n % 2 == 0:
         return False
-        
+
     # Check factors up to the square root
     for i in range(3, int(n**0.5) + 1, 2):
         if n % i == 0:
             return False
     return True
+
 
 # Testing numbers using f-strings
 for num in range(10):

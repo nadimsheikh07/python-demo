@@ -1,9 +1,10 @@
-n = 10
-try:
-    res = n / 0  # Raises ZeroDivisionError
+keys = ['a', 'b', 'c', 'd', 'e']
+values = [1, 2, 3, 4, 5]
 
-except ZeroDivisionError:
-    print("Can't be divided by zero!")
 
-finally:
-    print("Execution completed.")
+comb = zip(keys, values) 
+
+for i in comb:
+    print(i)
+
+print(comb)

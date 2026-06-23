@@ -1,11 +1,9 @@
-rows = 10
-for i in range(1, rows + 1):
-    # Calculate the spaces needed for centering
-    spaces = " " * (rows - i)
-    # Generate odd numbers of blocks (1, 3, 5, 7...)
-    blocks = "*" * (2 * i - 1)
-    print(spaces + blocks)
-
+rows = 5
 
 for i in range(rows):
     print("*" * i)
+
+for i in range(rows):
+    space = " " * (rows - i - 1)
+    star = "*" * (2 * i + 1)
+    print(space, star)

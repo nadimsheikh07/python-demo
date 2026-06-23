@@ -1,4 +1,9 @@
-student = {"name": "Mack", "age": 12, "class": "A"}
+rows = 5
 
+for i in range(rows):
+    print("*" * i)
 
-print(student.get("class", ""))
+for i in range(rows):
+    space = " " * (rows - i - 1)
+    star = "*" * (2 * i + 1)
+    print(space, star)

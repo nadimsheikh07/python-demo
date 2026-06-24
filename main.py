@@ -1,47 +1,22 @@
-def counter():
-    # Initialize the attribute if it doesn't exist yet
-    if not hasattr(counter, "state"):
-        counter.state = 0
+class Car:
+    # Class variable to store the total object count
+    object_count = 0
 
-    counter.state += 1
-    return counter.state
+    def __init__(self, brand):
+        self.brand = brand
+        # Increment the counter every time a new object is made
+        Car.object_count += 1
 
-
-# Example Usage:
-print(counter())  # Output: 1
-print(counter())  # Output: 2
-print(counter())  # Output: 3
-
-print("----------------")
-
-def create_counter():
-    state = 0  # Enclosed variable (persists in memory)
-
-    def incrementer():
-        nonlocal state  # Critical: allows modification of outer scope variable
-        state += 1
-        return state
-
-    return incrementer
+    def __del__(self):
+        # Decrement the counter when an object gets deleted
+        Car.object_count -= 1
 
 
-# Example Usage:
-my_counter = create_counter()
-print(my_counter())  # Output: 1
-print(my_counter())  # Output: 2
-print(my_counter())  # Output: 3
+# Create class objects
+car1 = Car("Toyota")
+car2 = Car("Honda")
+car3 = Car("Ford")
 
-print("----------------")
-
-def generator_counter():
-    state = 0
-    while True:
-        state += 1
-        yield state  # Pauses execution and returns the current value
-
-
-# Example Usage:
-my_gen = generator_counter()
-print(next(my_gen))  # Output: 1
-print(next(my_gen))  # Output: 2
-print(next(my_gen))  # Output: 3
+# Print the final count
+print(f"Total objects created: {Car.object_count}")
+# Output: Total objects created: 3
